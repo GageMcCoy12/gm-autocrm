@@ -3,6 +3,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import UserManagement from "@/components/admin/UserManagement";
 import TicketManagement from "@/components/admin/TicketManagement";
 import SystemSettings from "@/components/admin/SystemSettings";
+import Analytics from "@/components/admin/Analytics";
 import { Card } from "@/components/ui/card";
 
 const AdminView = () => {
@@ -12,12 +13,19 @@ const AdminView = () => {
         <h1 className="text-3xl font-bold">Admin Dashboard</h1>
       </div>
       
-      <Tabs defaultValue="users" className="space-y-4">
+      <Tabs defaultValue="analytics" className="space-y-4">
         <TabsList>
+          <TabsTrigger value="analytics">Analytics</TabsTrigger>
           <TabsTrigger value="users">User Management</TabsTrigger>
           <TabsTrigger value="tickets">Ticket Management</TabsTrigger>
           <TabsTrigger value="settings">System Settings</TabsTrigger>
         </TabsList>
+        
+        <TabsContent value="analytics" className="space-y-4">
+          <Card className="p-6">
+            <Analytics />
+          </Card>
+        </TabsContent>
         
         <TabsContent value="users" className="space-y-4">
           <Card className="p-6">
