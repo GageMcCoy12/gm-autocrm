@@ -6,6 +6,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import Layout from "./components/Layout";
 import CustomerView from "./pages/CustomerView";
 import WorkerView from "./pages/WorkerView";
+import AdminView from "./pages/AdminView";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
             <Route index element={<CustomerView />} />
             <Route path="customer" element={<CustomerView />} />
             <Route path="worker" element={<WorkerView />} />
+            <Route path="admin" element={<AdminView />} />
           </Route>
         </Routes>
         <Toaster />
